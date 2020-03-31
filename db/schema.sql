@@ -1,13 +1,13 @@
-DROP DATABASE IF EXISTS burgers_db;
+DROP DATABASE IF EXISTS burger_db;
 
 -- Great Burger Database in mySQL --
-CREATE DATABASE burgers_db;
+CREATE DATABASE burger_db;
 
--- Assigns following table to burgers_db --
-USE burgers_db;
+-- Assigns following table to burger_db --
+USE burger_db;
 
 -- Burger Table --
-CREATE TABLE burgers_table (
+CREATE TABLE burger_table (
     `id` INT AUTO_INCREMENT,
     `burger_name` VARCHAR(280) NOT NULL,
     `devoured` BOOLEAN DEFAULT false,
@@ -15,4 +15,4 @@ CREATE TABLE burgers_table (
 );
 
 -- Table for proofing in workbench --
-SELECT * FROM burgers_table;
+SELECT * FROM burger_table;
