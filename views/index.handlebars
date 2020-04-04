@@ -6,17 +6,17 @@
 <div class="container">
     <div class="row">
         <div class="col col-md-3">
-            <h2>Signature burger creations...</h2>
+            <h2> Signature creations...</h2>
             <ul>
                 {{#each burger}}
                 {{#unless devoured}}
-                {{> burger/burger-block devoured=false}}
+                {{> burger/ordered-block devoured=false}}
                 {{/unless}}
                 {{/each}}
             </ul>
         </div>
         <div class="col col-md-6">
-            <h2>Create a burger...</h2>
+            <h2>Design a burger...</h2>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" placeholder="Double-Dirty W/Extra Cheese..."
                     aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -26,11 +26,11 @@
             </div>
         </div>
         <div class="col col-md-3">
-            <h2>Burgers that have been devoured...</h2>
+            <h2>Devoured...</h2>
             <ul>
                 {{#each burger}}
                 {{#if devoured}}
-                {{> burger/burger-block devoured=true}}
+                {{> burger/consumed-block devoured=true}}
                 {{/if}}
                 {{/each}}
             </ul>
