@@ -21,17 +21,15 @@ $(function() {
             }
         );
     });
-});
-
-//Order burger button. Saves string to db & adds to signature creations list.
-$(".create-form").on("submit", function(event) {
+  //Order burger button. Saves string to db & adds to signature creations list.
+  $(".create-form").on("submit", function(event) {
     console.log('form submitted');
     // Make sure to preventDefault on a submit event.
     event.preventDefault()
 
     var newBurger = {
-      name: $("#makeBurger").val().trim(),
-      devoured: false
+      burger_name: $("#makeBurger").val().trim(),
+      devoured: 0
     };
     console.log($("#makeBurger").val().trim());
     // Send the POST request.
@@ -46,3 +44,6 @@ $(".create-form").on("submit", function(event) {
       }
     );
   });
+
+});
+
