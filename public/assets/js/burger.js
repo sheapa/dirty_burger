@@ -1,3 +1,5 @@
+
+//Devour button. Changes status from false to true. Updates database.
 $(function() {
     $(".change-devoured").on("click", function(event) {
         var id = $(this).data("id");
@@ -20,3 +22,27 @@ $(function() {
         );
     });
 });
+
+//Order burger button. Saves string to db & adds to signature creations list.
+$(".create-form").on("submit", function(event) {
+    console.log('form submitted');
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault()
+
+    var newBurger = {
+      name: $("#makeBurger").val().trim(),
+      devoured: false
+    };
+    console.log($("#makeBurger").val().trim());
+    // Send the POST request.
+    $.ajax("/api/burger", {
+      method: "POST",
+      data: newBurger
+    }).then(
+      function() {
+        console.log("New signature creation: " + newBurger.name);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
